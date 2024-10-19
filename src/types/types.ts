@@ -3,6 +3,7 @@ export interface MenuItem {
 	_id: {
 		secondCategory: string
 	}
+	isOpen?: boolean
 }
 
 export interface Category {
@@ -39,4 +40,49 @@ export interface Hh {
 	juniorSalary: number;
 	middleSalary: number;
 	seniorSalary: number;
+}
+
+export interface Course {
+	_id: string
+	categories: string[]
+	tags: string[]
+	title: string
+	link: string
+	price: number
+	oldPrice: number
+	credit: number
+	image: string
+	initialRating: number
+	characteristics: Characteristic[]
+	description: string
+	advantages: string
+	disAdvantages: string
+	html: string
+	blog: Blog
+	companyId: string
+	clicks: number
+	reviews: Review[]
+	reviewCount: number
+	reviewAvg: number | null
+}
+
+export interface Characteristic {
+	name: string
+	value: string
+}
+
+export interface Blog {
+	text: string
+	_id: string
+}
+
+export interface Review {
+	_id: string
+	productId: string
+	description: string
+	name: string
+	title: string
+	createdAt: string
+	rating: number
+	updatedAt: string
 }

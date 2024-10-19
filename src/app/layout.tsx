@@ -5,12 +5,15 @@ import Header from '../components/Header/Header';
 import Sidebar from '../components/Sidebar/Sidebar';
 import { cn } from './myClassNames';
 import style from './layout.module.css';
+import { Noto_Sans } from 'next/font/google';
 import "./globals.css";
 
-const geistSans = localFont({
-	src: "./fonts/GeistVF.woff",
-	variable: "--font-geist-sans",
-	weight: "100 900",
+const notoSans = Noto_Sans({
+	weight: ['300', '400', '500', '600', '700'],
+	style: ['normal', 'italic'],
+	subsets: ['latin'],
+	display: 'swap',
+	preload: false
 });
 
 export const metadata: Metadata = {
@@ -25,7 +28,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ru">
-			<body className={cn(geistSans.variable, style.body)}>
+			<body className={cn(notoSans.className, style.body)}>
 				<Header className={style.header} />
 				<Sidebar className={style.sidebar} />
 				<main className={style.main}>
