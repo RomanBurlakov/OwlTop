@@ -1,0 +1,12 @@
+.rating {
+	display: inline-flex;
+	height: 20px;
+}
+
+.editable {
+	cursor: pointer;
+}
+
+.star:not(:last-child) {
+	padding-right: 5px;
+}

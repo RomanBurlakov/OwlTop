@@ -1,0 +1,33 @@
+.button {
+	border: 1px solid var(--primary);
+	border-radius: 5px;
+	padding: 10px;
+	background-color: var(--primary);
+	color: white;
+	font-size: 14px;
+	line-height: 100%;
+	transition: background-color 0.3s;
+}
+
+.button:hover {
+	background-color: var(--primary-hover);
+}
+
+.transparent {
+	border-color: var(--gray-light);
+	background-color: transparent;
+	color: var(--foreground);
+}
+
+.transparent:hover {
+	background-color: var(--gray-light);
+}
+
+.arrow {
+	margin-left: 10px;
+	transition: transform 0.3s;
+}
+
+.arrow-down {
+	transform: rotate(90deg);
+}
