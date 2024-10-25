@@ -3,12 +3,12 @@ import { cn, mp } from '@/app/myClassNames';
 import styles from './P.module.css';
 
 interface PProps extends HTMLAttributes<HTMLParagraphElement> {
-	size?: 'small' | 'large'
+	size?: 'small' | 'large' | ''
 }
 
-export default function P({ children, size, className, ...props }: PProps): ReactElement {
+export default function P({ children, size = '', className, ...props }: PProps): ReactElement {
 
 	return (
-		<p className={cn(...mp(styles, 'p', size), className)} {...props}>{children}</p>
+		<p className={cn(styles.p, styles[size], className)} {...props}>{children}</p>
 	);
 }

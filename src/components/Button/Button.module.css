@@ -20,14 +20,16 @@
 }
 
 .transparent:hover {
-	background-color: var(--gray-light);
+	background-color: var(--primary);
+	color: white;
 }
 
-.arrow {
+.button svg {
 	margin-left: 10px;
-	transition: transform 0.3s;
+	transition: transform 0.5s;
 }
 
-.arrow-down {
+.transparent:hover svg {
+	fill: white;
 	transform: rotate(90deg);
 }

@@ -1,0 +1,42 @@
+.container {
+	height: 90px;
+	border-bottom: 1px solid var(--gray-light);
+}
+
+.info {
+	height: 70px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.title {
+	display: flex;
+	gap: 30px;
+}
+
+.text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+}
+
+.price {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 30px;
+}
+
+.price-item {
+	font-weight: 300;
+	font-size: 14px;
+}
+
+.cost {
+	font-weight: 400;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}

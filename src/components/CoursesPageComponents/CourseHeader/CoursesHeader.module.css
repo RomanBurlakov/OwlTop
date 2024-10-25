@@ -1,0 +1,29 @@
+.header {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 1fr 1fr;
+	margin: 40px 0 20px;
+	/* grid-template-rows: 1fr 1fr;
+	justify-items: center; */
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.filters {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 20px;
+	font-weight: 400;
+	font-size: 16px;
+	color: #000;
+}
+
+.active {
+	font-weight: 700;
+	color: var(--primary);
+}

@@ -1,0 +1,43 @@
+.description {
+	padding: 20px 0;
+	border-bottom: 1px solid var(--gray-light);
+}
+
+.section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px;
+	margin-top: 15px;
+}
+
+.characteristics {
+	display: grid;
+	grid-auto-rows: 30px;
+}
+
+.characteristic {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 15px;
+	font-size: 16px;
+}
+
+.name {
+	font-weight: 700;
+}
+
+.dashed-line {
+	border-bottom: 1px dashed #c4c4c4;
+	margin-top: 10px;
+	flex-grow: 1;
+}
+
+.value {
+	font-weight: 500;
+}
+
+.advantages {
+	padding-left: 15px;
+	border-left: 3px solid var(--green);
+}

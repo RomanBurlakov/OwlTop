@@ -2,11 +2,15 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getPage } from '@/api/page';
 import { getMenu } from '@/api/menu';
+import { getCourses } from '@/api/courses';
+import CoursesHeader from '@/components/CoursesPageComponents/CourseHeader/CoursesHeader';
+import CourseList from '@/components/CoursesPageComponents/CourseList/CourseList';
+import Htag from '@/components/Htag/Htag';
 
 export async function generateMetadata(): Promise<Metadata> {
 
 	return {
-		title: 'Products'
+		title: 'Courses'
 	};
 }
 
@@ -18,13 +22,17 @@ export async function generateStaticParams() {
 
 export default async function ProductPage({ params }: { params: { alias: string } }) {
 	const page = await getPage(params.alias);
-	if (!page) {
+	const courses = await getCourses(page?.category);
+	if (!page || !courses) {
 		notFound();
 	}
 
 	return (
-		<div>
-			{page.title}
-		</div>
+		<>
+			<CoursesHeader title={page.title} quantity={courses.length} />
+			<CourseList courses={courses} />
+			{courses.length === 0 && <Htag tag='h2'>{page.title + ' не найдены...'}</Htag>}
+			{page && page.title}
+		</>
 	);
 }

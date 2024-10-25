@@ -62,6 +62,7 @@ export interface Course {
 	companyId: string
 	clicks: number
 	reviews: Review[]
+	reviewsOpen?: boolean
 	reviewCount: number
 	reviewAvg: number | null
 }

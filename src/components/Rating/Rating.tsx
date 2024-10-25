@@ -1,9 +1,10 @@
+"use client";
 import { Dispatch, HTMLAttributes, ReactElement, SetStateAction, useEffect, useState } from 'react';
 import { cn } from '@/app/myClassNames';
 import styles from './Rating.module.css';
 
 interface RatingPropsBase extends HTMLAttributes<HTMLDivElement> {
-	rating: number,
+	rating?: number,
 }
 
 type RatingPropsEditable = {
@@ -32,7 +33,7 @@ type RatingProps = RatingPropsBase & RatingPropsEditable
 
 let stars: boolean[] = new Array(5).fill(false);
 
-export default function Rating({ rating, isEditable = false, setRating, className, ...props }: RatingProps): ReactElement {
+export default function Rating({ rating = 0, isEditable = false, setRating, className, ...props }: RatingProps): ReactElement {
 	const [ratingArray, setRatingArray] = useState<ReactElement[]>([]);
 
 	useEffect(() => {
