@@ -5,7 +5,7 @@ import { MenuItem } from '@/types/types';
 import { cn } from '@/app/myClassNames';
 import { usePathname } from 'next/navigation';
 import HatIcon from './HatIcon';
-import style from './Menu.module.css';
+import styles from './Menu.module.css';
 
 interface MenuProps extends HTMLAttributes<HTMLElement> {
 	menuItems: MenuItem[]
@@ -20,7 +20,7 @@ export default function Menu({ menuItems, ...props }: MenuProps): ReactElement {
 			const alias = pathname.slice(9);
 			if (alias) {
 				const aliasMenuIndex = menu.findIndex(e => e.pages.find(e2 => e2.alias === alias));
-				if (!menu[aliasMenuIndex].isOpen) openMenuItem(aliasMenuIndex);
+				if (menu[aliasMenuIndex] && !menu[aliasMenuIndex]?.isOpen) openMenuItem(aliasMenuIndex);
 			}
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,25 +39,25 @@ export default function Menu({ menuItems, ...props }: MenuProps): ReactElement {
 
 	return (
 		<nav {...props}>
-			<div className={style.header}>
+			<div className={styles.header}>
 				<HatIcon />
 				<span>Курсы</span>
 			</div>
-			<ul className={style.categories}>
+			<ul className={styles.categories}>
 				{menu.map((menuItem, i) => {
 					return (
 						<li key={i}>
 							<button
-								className={style.button}
+								className={styles.button}
 								onClick={() => openMenuItem(i, menuItem.isOpen)}
 							>{menuItem._id.secondCategory}</button>
-							<ul className={cn(style.category, { [style.open]: menuItem.isOpen })}>
+							<ul className={cn(styles.category, { [styles.open]: menuItem.isOpen })}>
 								<div>
 									{menuItem.pages.map((e) => {
 										const link = '/courses/' + e.alias;
 										return (
 											<li key={e._id}>
-												<Link className={pathname === link ? style.active : ''} href={link} prefetch={true}>{e.category}</Link>
+												<Link className={pathname === link ? styles.active : ''} href={link} prefetch={true}>{e.category}</Link>
 											</li>
 										);
 									})}

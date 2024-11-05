@@ -3,9 +3,8 @@ import { notFound } from 'next/navigation';
 import { getPage } from '@/api/page';
 import { getMenu } from '@/api/menu';
 import { getCourses } from '@/api/courses';
-import CoursesHeader from '@/components/CoursesPageComponents/CourseHeader/CoursesHeader';
-import CourseList from '@/components/CoursesPageComponents/CourseList/CourseList';
-import Htag from '@/components/Htag/Htag';
+import CoursesList from '@/components/CoursesListComponents/CoursesList';
+import HhBlock from '@/components/HhBlock/HhBlock';
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -29,10 +28,8 @@ export default async function ProductPage({ params }: { params: { alias: string 
 
 	return (
 		<>
-			<CoursesHeader title={page.title} quantity={courses.length} />
-			<CourseList courses={courses} />
-			{courses.length === 0 && <Htag tag='h2'>{page.title + ' не найдены...'}</Htag>}
-			{page && page.title}
+			<CoursesList title={page.title} quantity={courses.length} courses={courses} />
+			<HhBlock hh={page.hh} title={page.category} />
 		</>
 	);
 }

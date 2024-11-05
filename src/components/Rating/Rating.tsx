@@ -46,7 +46,7 @@ export default function Rating({ rating = 0, isEditable = false, setRating, clas
 			const number = i + 1;
 			return <Star
 				key={i}
-				fill={rating > i ? 'var(--primary)' : 'var(--gray-light)'}
+				fill={Math.round(rating) > i ? 'var(--primary)' : 'var(--gray-light)'}
 				onClick={() => ratingClickHandler(number)}
 				onMouseEnter={() => ratingHoverHandler(number)}
 				onMouseLeave={ratingLeaveHandler}
@@ -70,7 +70,7 @@ export default function Rating({ rating = 0, isEditable = false, setRating, clas
 	}
 
 	return (
-		<div className={cn(styles.rating, isEditable && [styles.editable], className)} {...props}>
+		<div className={cn(styles.rating, isEditable && [styles.editable], className)} title={String(rating)} {...props}>
 			{...ratingArray}
 		</div>
 	);

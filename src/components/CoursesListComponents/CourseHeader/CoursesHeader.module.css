@@ -3,8 +3,6 @@
 	gap: 10px;
 	grid-template-columns: 1fr 1fr;
 	margin: 40px 0 20px;
-	/* grid-template-rows: 1fr 1fr;
-	justify-items: center; */
 }
 
 .title {
@@ -23,7 +21,27 @@
 	color: #000;
 }
 
+.filters svg {
+	display: none;
+}
+
+.filter {
+	cursor: pointer;
+}
+
 .active {
 	font-weight: 700;
 	color: var(--primary);
+}
+
+.active svg {
+	display: inline;
+}
+
+@media (max-width: 550px) {
+	.header {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+		justify-items: center;
+	}
 }

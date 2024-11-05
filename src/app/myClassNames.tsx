@@ -23,22 +23,4 @@ function classNames(...args: Args[]): string {
 	return classes.join(' ');
 }
 
-function makeParams(styles: Styles, ...args: (ClassName | ClassNameObject)[]): ClassNameObject[] {
-	const ClassNameObjects: ClassNameObject[] = [];
-	args.forEach(e => {
-		if (e && typeof e !== 'boolean') {
-			if (typeof e === 'object') {
-				for (const key in e) {
-					if (e[key]) {
-						ClassNameObjects.push({ [styles[key]]: true });
-					}
-				}
-			} else if (styles[e]) {
-				ClassNameObjects.push({ [styles[e]]: e });
-			}
-		}
-	});
-	return ClassNameObjects;
-}
-
-export { classNames as cn, makeParams as mp };
+export { classNames as cn };

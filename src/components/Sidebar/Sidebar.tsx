@@ -3,6 +3,7 @@ import { cn } from '@/app/myClassNames';
 import { getMenu } from '@/api/menu';
 import Menu from '../Menu/Menu';
 import Logo from '../Logo/Logo';
+import Search from '../Search/Search';
 import styles from './Sidebar.module.css';
 
 interface SidebarProps extends HTMLAttributes<HTMLElement> { }
@@ -13,7 +14,7 @@ export default async function Sidebar({ className, ...props }: SidebarProps) {
 	return (
 		<aside className={cn(styles.sidebar, className)} {...props}>
 			<Logo />
-			<div>ПОИСК</div>
+			<Search />
 			<Menu menuItems={menu} />
 		</aside>
 	);

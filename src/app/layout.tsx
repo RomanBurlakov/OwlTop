@@ -4,8 +4,8 @@ import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Sidebar from '../components/Sidebar/Sidebar';
 import { cn } from './myClassNames';
-import style from './layout.module.css';
 import { Noto_Sans } from 'next/font/google';
+import styles from './layout.module.css';
 import "./globals.css";
 
 const notoSans = Noto_Sans({
@@ -28,13 +28,13 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ru">
-			<body className={cn(notoSans.className, style.body)}>
-				<Header className={style.header} />
-				<Sidebar className={style.sidebar} />
-				<main className={style.main}>
+			<body className={cn(notoSans.className, styles.body)}>
+				<Header className={styles.header} />
+				<Sidebar className={styles.sidebar} />
+				<main className={styles.main}>
 					{children}
 				</main>
-				<Footer className={style.footer} />
+				<Footer className={styles.footer} />
 			</body>
 		</html>
 	);

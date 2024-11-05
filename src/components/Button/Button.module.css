@@ -6,11 +6,12 @@
 	color: white;
 	font-size: 14px;
 	line-height: 100%;
-	transition: background-color 0.3s;
+	transition: all 0.5s;
 }
 
 .button:hover {
 	background-color: var(--primary-hover);
+	transform: scale(1.05);
 }
 
 .transparent {
@@ -24,12 +25,12 @@
 	color: white;
 }
 
-.button svg {
+.button span {
 	margin-left: 10px;
 	transition: transform 0.5s;
 }
 
-.transparent:hover svg {
+.transparent:hover span {
 	fill: white;
 	transform: rotate(90deg);
 }

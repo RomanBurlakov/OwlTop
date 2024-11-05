@@ -3,9 +3,10 @@ import { HTMLAttributes } from 'react';
 import P from '@/components/P/P';
 import UserIcon from './UserIcon.svg';
 import Image from 'next/image';
-import style from './CourseComment.module.css';
 import Rating from '@/components/Rating/Rating';
+import CommentAddForm from '../CommentAddForm/CommentAddForm';
 import { cn } from '@/app/myClassNames';
+import styles from './CourseComments.module.css';
 
 interface CourseCommentProps extends HTMLAttributes<HTMLDivElement> {
 	reviews: Review[]
@@ -15,18 +16,18 @@ interface CourseCommentProps extends HTMLAttributes<HTMLDivElement> {
 export default function CourseComment({ reviews, isOpen, ...props }: CourseCommentProps) {
 
 	return (
-		<div className={cn(style.container, { [style.open]: isOpen })} {...props}>
-			<ul>
-				{reviews.reverse().map(e => {
+		<div className={cn(styles.container, { [styles.open]: isOpen })} {...props}>
+			<div>
+				{reviews.map(e => {
 					return (
-						<li className={style.comment} key={e._id}>
-							<div className={style.header}>
+						<div className={styles.comment} key={e._id}>
+							<div className={styles.header}>
 								<Image src={UserIcon} alt='User icon' />
-								<div className={style.info}>
-									<span className={style.name}>{e.name}:</span>
+								<div className={styles.info}>
+									<span className={styles.name}>{`${e.name}: `}&nbsp;</span>
 									<span>{e.title}</span>
 								</div>
-								<span className={style.date}>
+								<span className={styles.date}>
 									{new Date(e.createdAt).toLocaleString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' }).slice(0, -3)}
 								</span>
 								<Rating rating={e.rating} />
@@ -34,10 +35,11 @@ export default function CourseComment({ reviews, isOpen, ...props }: CourseComme
 							<P size='small' style={{ marginBottom: '20px' }}>
 								{e.description}
 							</P>
-						</li>
+						</div>
 					);
 				})}
-			</ul>
+				<CommentAddForm />
+			</div>
 		</div>
 	);
 }
