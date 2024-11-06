@@ -1,5 +1,5 @@
 import { HTMLAttributes, ReactElement } from 'react';
-import { cn, mp } from '@/app/myClassNames';
+import { cn } from '@/app/myClassNames';
 import styles from './Tag.module.css';
 
 interface TagProps extends HTMLAttributes<HTMLSpanElement> {
