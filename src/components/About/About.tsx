@@ -1,15 +1,14 @@
 import { HTMLAttributes, ReactElement } from 'react';
-import { cn } from '@/app/myClassNames';
-import styles from './Tag.module.css';
+import P from '../P/P';
+import styles from './About.module.css';
 
-interface AboutProps extends HTMLAttributes<HTMLSpanElement> {
-	size?: 'big' | ''
-	color?: 'red' | 'green' | 'gray' | 'transparent' | ''
+interface AboutProps extends HTMLAttributes<HTMLDivElement> {
+	seoText: string
 }
 
-export default function About({ children, className, color = '', size = '', ...props }: AboutProps): ReactElement {
+export default function About({ seoText }: AboutProps): ReactElement {
 
 	return (
-		<></>
+		<P dangerouslySetInnerHTML={{ __html: seoText }} className={styles.about}></P>
 	);
 }

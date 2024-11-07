@@ -22,6 +22,10 @@ export default function CourseDescription({ course }: CourseDescriptionProps): R
 						<span className={styles.name}>Преимущества</span>
 						<P>{course.advantages}</P>
 					</div>}
+					{course.disAdvantages && <div className={styles.disadvantages}>
+						<span className={styles.name}>Недостатки</span>
+						<P>{course.disAdvantages}</P>
+					</div>}
 				</div>
 			</div>
 		</div>

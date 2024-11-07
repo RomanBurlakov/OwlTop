@@ -20,13 +20,13 @@ export interface PageModel {
 	alias: string;
 	title: string;
 	category: string;
-	seoText: string;
+	seoText?: string;
 	tagsTitle: string;
 	metaTitle: string;
 	metaDescription: string;
 	firstCategory: number;
-	advantages: Advantage[];
-	hh: Hh;
+	advantages?: Advantage[];
+	hh?: Hh;
 }
 
 export interface Advantage {

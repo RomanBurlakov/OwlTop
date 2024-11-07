@@ -42,6 +42,12 @@
 	border-left: 3px solid var(--green);
 }
 
+.disadvantages {
+	margin-top: 20px;
+	padding-left: 15px;
+	border-left: 3px solid var(--red);
+}
+
 @media(max-width: 1300px) {
 	.section {
 		grid-template-columns: 1fr;

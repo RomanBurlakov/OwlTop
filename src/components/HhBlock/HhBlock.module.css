@@ -67,3 +67,29 @@
 	font-size: 26px;
 	margin: 8px 0 12px;
 }
+
+@media (max-width: 1000px) {
+	.vacancy {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 500px) {
+	.levels {
+		grid-template-columns: 1fr;
+	}
+
+	.levels.block {
+		padding: 0;
+	}
+
+	.level {
+		padding: 10px 0;
+		border-right: none;
+		border-bottom: 1px solid var(--gray-light);
+	}
+
+	.level:last-child {
+		border-bottom: none;
+	}
+}

@@ -1,5 +1,5 @@
 import { HTMLAttributes, ReactElement } from 'react';
-import { cn, mp } from '@/app/myClassNames';
+import { cn } from '@/app/myClassNames';
 import styles from './P.module.css';
 
 interface PProps extends HTMLAttributes<HTMLParagraphElement> {

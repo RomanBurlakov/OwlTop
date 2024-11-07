@@ -5,6 +5,9 @@ import { getMenu } from '@/api/menu';
 import { getCourses } from '@/api/courses';
 import CoursesList from '@/components/CoursesListComponents/CoursesList';
 import HhBlock from '@/components/HhBlock/HhBlock';
+import Advantages from '@/components/Advantages/Advantages';
+import About from '@/components/About/About';
+import Skills from '@/components/Skills/Skills';
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -29,7 +32,10 @@ export default async function ProductPage({ params }: { params: { alias: string 
 	return (
 		<>
 			<CoursesList title={page.title} quantity={courses.length} courses={courses} />
-			<HhBlock hh={page.hh} title={page.category} />
+			{page.hh && <HhBlock hh={page.hh} title={page.category} />}
+			{page.advantages && page.advantages[0]?.description && <Advantages advantages={page.advantages} />}
+			{page.seoText && <About seoText={page.seoText} />}
+			<Skills skills={page.tags} />
 		</>
 	);
 }

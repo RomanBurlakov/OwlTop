@@ -24,17 +24,19 @@ export default function CourseInfo({ course }: CourseInfoProps): ReactElement {
 					</div>
 				</div>
 				<div className={styles.price}>
-					<div className={styles.cost} style={{ alignItems: 'center', gap: '5px' }}>
+					<div className={styles.cost}>
 						{`${course.price} ₽ `}
 						<Tag color='green'>{`-${course.oldPrice - course.price} ₽`}</Tag>
 					</div>
-					<div className={styles.cost} style={{ alignItems: 'baseline' }}>
-						{`${course.credit} ₽`}
-						<span>/мес</span>
-					</div>
-					<Rating rating={course.initialRating} />
-					<span className={styles.priceTitle}>цена</span>
-					<span className={styles.creditTitle}>в кредит</span>
+					{course.credit !== 0 &&
+						<div className={styles.credit}>
+							{`${course.credit} ₽`}
+							<span>/мес</span>
+						</div>
+					}
+					<Rating rating={course.initialRating} className={styles.rating} />
+					<span className={styles.costTitle}>цена</span>
+					{course.credit !== 0 && <span className={styles.creditTitle}>в кредит</span>}
 					<span className={styles.ratingTitle}>{`${course.reviewCount} отзывов`}</span>
 
 				</div>

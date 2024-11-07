@@ -1,0 +1,21 @@
+.advantages {
+	margin-bottom: 30px;
+}
+
+.advantage {
+	margin-top: 30px;
+}
+
+.header {
+	display: grid;
+	gap: 40px;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+}
+
+.description {
+	margin-top: 20px;
+	margin-left: 24px;
+	padding-left: 60px;
+	border-left: 2px solid var(--gray-light);
+}
