@@ -14,6 +14,10 @@
 	gap: 30px;
 }
 
+.title img {
+	border-radius: 5px;
+}
+
 .text {
 	display: flex;
 	flex-direction: column;

@@ -1,5 +1,6 @@
 .tag {
 	display: inline-block;
+	width: fit-content;
 	padding: 4px 8px;
 	margin-right: 5px;
 	font-weight: 500;

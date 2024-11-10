@@ -16,11 +16,9 @@ export default function CoursesHeader({ title, quantity, switchFilter, filter, c
 
 	return (
 		<div className={cn(styles.header, className)} {...props}>
-			<div className={styles.title}>
-				<Htag tag={'h1'}>{title}</Htag>
-				<Tag size='big' color='gray'>{quantity}</Tag>
-			</div>
-			<div className={styles.filters}>
+			<Htag tag={'h1'}>{title}</Htag>
+			<Tag size='big' color='gray'>{quantity}</Tag>
+			<div className={styles.filters} >
 				<span
 					className={cn(styles.filter, { [styles.active]: filter === 'rating' })}
 					onClick={() => switchFilter('rating')}

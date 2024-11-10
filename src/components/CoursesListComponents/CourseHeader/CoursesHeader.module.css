@@ -1,32 +1,29 @@
 .header {
 	display: grid;
 	gap: 10px;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: auto auto 1fr;
 	margin: 40px 0 20px;
-}
-
-.title {
-	display: flex;
 	align-items: center;
-	gap: 15px;
 }
 
 .filters {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	gap: 20px;
-	font-weight: 400;
-	font-size: 16px;
-	color: #000;
-}
-
-.filters svg {
-	display: none;
+	justify-self: end;
 }
 
 .filter {
+	margin-left: 20px;
+	font-weight: 400;
+	font-size: 16px;
+	color: #000;
 	cursor: pointer;
+}
+
+.filter:last-child {
+	margin-left: 20px;
+}
+
+.filter svg {
+	display: none;
 }
 
 .active {
@@ -40,8 +37,12 @@
 
 @media (max-width: 550px) {
 	.header {
-		grid-template-columns: 1fr;
+		grid-template-columns: auto 1fr;
 		grid-template-rows: 1fr 1fr;
-		justify-items: center;
 	}
+
+	.filters {
+		justify-self: start;
+	}
+
 }

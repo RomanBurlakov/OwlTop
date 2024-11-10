@@ -37,8 +37,11 @@ export default function CourseInfo({ course }: CourseInfoProps): ReactElement {
 					<Rating rating={course.initialRating} className={styles.rating} />
 					<span className={styles.costTitle}>цена</span>
 					{course.credit !== 0 && <span className={styles.creditTitle}>в кредит</span>}
-					<span className={styles.ratingTitle}>{`${course.reviewCount} отзывов`}</span>
-
+					<span className={styles.ratingTitle}>{`${course.reviewCount} 
+					${course.reviewCount % 100 > 4 && course.reviewCount % 100 < 20 ? 'отзывов' :
+							course.reviewCount % 10 === 1 ? 'отзыв' :
+								course.reviewCount % 10 === 2 || course.reviewCount % 10 === 3 || course.reviewCount % 10 === 4 ? 'отзыва' : 'отзывов'}`
+					}</span>
 				</div>
 			</div>
 		</div>
