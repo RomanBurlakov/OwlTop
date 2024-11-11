@@ -8,7 +8,7 @@ export default function Header({ className, ...props }: HeaderProps): ReactEleme
 
 	return (
 		<header className={cn(styles.header, className)} {...props}>
-			HEADER
+			{'HEADER'}
 		</header>
 	);
 }
